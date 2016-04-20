@@ -50,23 +50,23 @@ class DataField extends Ui.DataField
     
     function drawGPS(dc,x,y,size_w,size_h,bar_height,space){
     	if( gps == 4){
-			dc.fillRectangle(x, y+3*size_h, size_w, bar_height-3*size_h);
+    		dc.fillRectangle(x+3*size_w+3*space, y, size_w, bar_height);
 		}
 		if(gps >=3 ) {
-			dc.fillRectangle(x+size_w+space, y+2*size_h, size_w, bar_height-2*size_h);
-		}
-		if(gps >= 2 ) {
 			dc.fillRectangle(x+2*size_w+2*space, y+size_h, size_w, bar_height-size_h);
 		}
+		if(gps >= 2 ) {
+			dc.fillRectangle(x+size_w+space, y+2*size_h, size_w, bar_height-2*size_h);
+		}
 		if(gps >= 1 ) {
-			dc.fillRectangle(x+3*size_w+3*space, y, size_w, bar_height);
+			dc.fillRectangle(x, y+3*size_h, size_w, bar_height-3*size_h);			
 		}
-		if(gps == 0 ) {
-			dc.drawRectangle(x, y+3*size_h, size_w, bar_height-3*size_h);
-			dc.drawRectangle(x+size_w+space, y+2*size_h, size_w, bar_height-2*size_h);
-			dc.drawRectangle(x+2*size_w+2*space, y+size_h, size_w, bar_height-size_h);
-			dc.drawRectangle(x+3*size_w+3*space, y, size_w, bar_height);
-		}
+		
+		dc.drawRectangle(x, y+3*size_h, size_w, bar_height-3*size_h);
+		dc.drawRectangle(x+size_w+space, y+2*size_h, size_w, bar_height-2*size_h);
+		dc.drawRectangle(x+2*size_w+2*space, y+size_h, size_w, bar_height-size_h);
+		dc.drawRectangle(x+3*size_w+3*space, y, size_w, bar_height);
+		
     }
 }
 
