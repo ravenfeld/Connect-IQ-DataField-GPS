@@ -1,0 +1,6 @@
+<resources>
+    <string id="AppName">Signal Gps</string>
+    <string id="color">Couleur</string>
+   	<string id="color_default">Défaut</string>
+    <string id="color_red">Rouge</string>
+</resources>
