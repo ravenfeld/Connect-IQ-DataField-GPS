@@ -15,8 +15,6 @@ class DataField extends Ui.DataField
     function onUpdate(dc)
     {
     
-        var color = (getBackgroundColor() == Graphics.COLOR_BLACK) ? Graphics.COLOR_WHITE : Graphics.COLOR_BLACK;
-
          var flag = getObscurityFlags();
          var width = dc.getWidth();
          var height = dc.getHeight();
@@ -27,7 +25,7 @@ class DataField extends Ui.DataField
          var size_h = y/4;
          var space = size_w/4;
          
-        dc.setColor( color, Gfx.COLOR_TRANSPARENT );
+        setColor(dc); 
                 
         if(flag>=OBSCURE_BOTTOM){
         	y = y-10;
@@ -46,6 +44,36 @@ class DataField extends Ui.DataField
         }
                 
 		drawGPS(dc,x,y,size_w,size_h,bar_height,space);		
+    }
+    
+    function setColor(dc){
+        var user_color =  App.getApp().getProperty("default_color");
+        if(user_color == 0){
+           	var color = (getBackgroundColor() == Graphics.COLOR_BLACK) ? Graphics.COLOR_WHITE : Graphics.COLOR_BLACK;
+        	dc.setColor( color, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 1) {
+        	dc.setColor( Gfx.COLOR_BLUE, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 2) {
+        	dc.setColor( Gfx.COLOR_DK_BLUE, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 3) {
+        	dc.setColor( Gfx.COLOR_GREEN, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 4) {
+        	dc.setColor( Gfx.COLOR_DK_GREEN, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 5) {
+        	dc.setColor( Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 6) {
+        	dc.setColor( Gfx.COLOR_DK_GRAY, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 7) {
+        	dc.setColor( Gfx.COLOR_ORANGE, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 8) {
+        	dc.setColor( Gfx.COLOR_PINK, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 9) {
+        	dc.setColor( Gfx.COLOR_PURPLE, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 10) {
+        	dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 11) {
+        	dc.setColor( Gfx.COLOR_DK_RED, Gfx.COLOR_TRANSPARENT );
+        }
     }
     
     function drawGPS(dc,x,y,size_w,size_h,bar_height,space){
