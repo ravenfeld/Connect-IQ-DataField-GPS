@@ -3,9 +3,13 @@ using Toybox.WatchUi as Ui;
 using Toybox.Application as App;
 using Toybox.Graphics as Gfx;
 
-class DataField extends Ui.DataField
+class GpsDataFieldView extends Ui.DataField
 {
 	hidden var gps;
+        
+    function initialize() {
+        DataField.initialize();
+    }
         
     function compute(info)
     {
@@ -97,14 +101,4 @@ class DataField extends Ui.DataField
 		dc.drawRectangle(x+size_w+space/2+space, y, size_w, bar_height);
 		
     }
-}
-
-class GpsDataField extends App.AppBase
-{
-
-    function getInitialView()
-    {
-        return [new DataField()];
-    }
-
 }
