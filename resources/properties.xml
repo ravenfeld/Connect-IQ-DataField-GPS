@@ -20,6 +20,7 @@
             	<listEntry value="9">@Strings.color_purple</listEntry>
             	<listEntry value="10">@Strings.color_red</listEntry>
             	<listEntry value="11">@Strings.color_red_dark</listEntry>
+            	<listEntry value="12">@Strings.color_yellow</listEntry>
             </settingConfig>
         </setting> 
     </settings>
