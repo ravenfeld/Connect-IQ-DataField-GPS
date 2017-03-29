@@ -77,6 +77,8 @@ class GpsDataFieldView extends Ui.DataField
         	dc.setColor( Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT );
         }else if (user_color == 11) {
         	dc.setColor( Gfx.COLOR_DK_RED, Gfx.COLOR_TRANSPARENT );
+        }else if (user_color == 12) {
+        	dc.setColor( Gfx.COLOR_YELLOW, Gfx.COLOR_TRANSPARENT );
         }
     }
     
